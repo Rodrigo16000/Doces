@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doces</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar-header">
+  <nav class="navbar-container">
+    <!-- Logótipo / Nome da Marca -->
+    <a href="#" class="logo">
+      DOCES<span>.BR</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menu de Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#quem-somos">Quem Somos?</a></li>
+      <li><a href="#produtos">O Que Pode Vir?</a></li>
+      <li><a href="#compra">Compra e Formas de Pagamento</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#fale-conosco">Fale Conosco</a></li>
+    </ul>
+  </nav>
+</header>
+        <section class="hero-banner">
+  <div class="banner-container">
+    <!-- Coluna de Texto (Esquerda) -->
+    <div class="banner-content">
+      <h1 class="title">DOCES ARTESANAIS COM SABOR INCOMPARÁVEL</h1>
+      <p class="subtitle">
+        Aproveite nossas ofertas exclusivas! Junte-se a milhares de clientes e adoce o seu dia.
+      </p>
+    </div>
+
+    <!-- Coluna da Imagem (Direita) -->
+    <div class="banner-image">
+      <div class="shape-bg"></div>
+      <img src="sua-imagem-de-doce.png" alt="Doce Especial" class="main-img" />
+    </div>
+  </div>
+
+  <!-- Onda Decorativa na parte inferior -->
+  <div class="wave-bottom">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60C320 120 420 0 720 60C1020 120 1120 0 1440 60V120H0V60Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+<section class="sacola-section" id="produtos">
+  <div class="container">
+    <h2 class="section-title">O que vem na sua Sacola?</h2>
+    <p class="section-subtitle">Montamos cada sacola com um mix delicioso de guloseimas selecionadas com carinho!</p>
+
+    <div class="cards-grid">
+      <!-- Card 1: Bombons -->
+      <div class="card-produto">
+        <div class="card-image">
+          <img src="bombons.jpg" alt="Bombons Finos e Recheados" />
+        </div>
+        <div class="card-content">
+          <h3>Bombons Variados</h3>
+          <p>Bombons recheados, trufados e das melhores marcas para deixar sua sacola ainda mais especial.</p>
+          <span class="badge">Sortidos</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Balas e Chicletes -->
+      <div class="card-produto">
+        <div class="card-image">
+          <img src="balas.jpg" alt="Balas e Doces Variados" />
+        </div>
+        <div class="card-content">
+          <h3>Balas & Doces</h3>
+          <p>Balas mastigáveis, pirulitos, gomas de mascar e guloseimas clássicas que todo mundo ama.</p>
+          <span class="badge">Coloridos</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Personalização -->
+      <div class="card-produto">
+        <div class="card-image">
+          <img src="sacola-art.jpg" alt="Sacola Personalizada" />
+        </div>
+        <div class="card-content">
+          <h3>Sacola Exclusiva</h3>
+          <p>Embalagem personalizada com laço e mensagem especial, perfeita para presentes ou lembrancinhas.</p>
+          <span class="badge">Especial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="pagamento-section" id="compra">
+  <div class="container">
+    <h2 class="section-title">Compras e Formas de Pagamento</h2>
+    <p class="section-subtitle">Facilidade, segurança e rapidez para você garantir seus doces favoritos!</p>
+
+    <div class="pagamento-grid">
+      <!-- Opção 1: Como Comprar -->
+      <div class="card-pagamento">
+        <div class="icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </div>
+        <h3>Como Fazer o Pedido</h3>
+        <p>Escolha seus doces ou sacolas personalizadas, chame a gente no WhatsApp e confirme os detalhes do seu pedido de forma rápida e prática.</p>
+      </div>
+
+      <!-- Opção 2: Formas de Pagamento -->
+      <div class="card-pagamento">
+        <div class="icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+        </div>
+        <h3>Formas de Pagamento</h3>
+        <p>Aceitamos as principais formas de pagamento para a sua comodidade:</p>
+        <ul class="lista-pagamentos">
+          <li><strong>Pix:</strong> Aprovação imediata</li>
+          <li><strong>Cartão de Crédito e Débito:</strong> Principais bandeiras</li>
+          <li><strong>Dinheiro:</strong> Na entrega/retirada</li>
+        </ul>
+      </div>
+
+      <!-- Opção 3: Entrega e Retirada -->
+      <div class="card-pagamento">
+        <div class="icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+        </div>
+        <h3>Entrega e Retirada</h3>
+        <p>Entregamos direto na sua casa com todo o cuidado ou você pode agendar a retirada presencial sem custo adicional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="avaliacoes-section" id="avaliacoes">
+  <div class="container">
+    <h2 class="section-title">Avaliações</h2>
+    <p class="section-subtitle">A opinião dos nossos clientes é o que garante a nossa qualidade!</p>
+
+    <!-- Caixa de Convite para Primeiras Avaliações -->
+    <div class="card-sem-avaliacao">
+      <div class="icon-avaliacao">⭐</div>
+      <h3>Seja o primeiro a avaliar!</h3>
+      <p>Já experimentou as nossas sacolas de doces? Faça o seu pedido, conte-nos como foi a sua experiência e ajude a nossa comunidade a crescer.</p>
+      <a href="#fale-conosco" class="btn-avaliar">Fazer um Pedido</a>
+    </div>
+  </div>
+</section>
+<section class="fale-conosco-section" id="fale-conosco">
+  <div class="container">
+    <h2 class="section-title">Fale Conosco</h2>
+    <p class="section-subtitle">Tem alguma dúvida ou quer encomendar uma sacola personalizada? Entre em contato!</p>
+
+    <div class="fale-conosco-grid">
+      <!-- Canais de Atendimento Direto -->
+      <div class="canais-contato">
+        <h3>Atendimento Rápido</h3>
+        <p>Clique abaixo para falar diretamente conosco ou envie uma mensagem:</p>
+
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn-whatsapp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          Chamar no WhatsApp
+        </a>
+
+        <div class="info-item">
+          <strong>Horário de Atendimento:</strong>
+          <span>Segunda a Sábado, das 09h às 18h</span>
+        </div>
+
+        <div class="info-item">
+          <strong>E-mail:</strong>
+          <span>contato@doces.com.br</span>
+        </div>
+      </div>
+
+      <!-- Formulário de Mensagem -->
+      <form class="form-contato">
+        <div class="form-group">
+          <label for="nome">Seu Nome</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">Seu WhatsApp ou E-mail</label>
+          <input type="text" id="whatsapp" placeholder="(00) 00000-0000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Sua Mensagem</label>
+          <textarea id="mensagem" rows="4" placeholder="Como podemos te ajudar?" required></textarea>
+        </div>
+
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé do Site -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <!-- Coluna 1: Marca & Sobre -->
+    <div class="footer-col">
+      <a href="#" class="footer-logo">
+        DOCES<span>.BR</span>
+      </a>
+      <p class="footer-desc">
+        Sua loja especializada em sacolas personalizadas recheadas de bombons, balas e guloseimas artesanais para adoçar todos os momentos.
+      </p>
+      <div class="social-links">
+        <a href="#" target="_blank" aria-label="Instagram">Instagram</a>
+        <a href="#" target="_blank" aria-label="Facebook">Facebook</a>
+      </div>
+    </div>
+
+    <!-- Coluna 2: Links Rápidos -->
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#produtos">O Que Pode Vir</a></li>
+        <li><a href="#pagamento">Compras e Pagamento</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#fale-conosco">Fale Conosco</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 3: Horário & Contato -->
+    <div class="footer-col">
+      <h4>Atendimento</h4>
+      <p><strong>Horário:</strong><br>Segunda a Sábado: 09h às 18h</p>
+      <p><strong>Atendimento via WhatsApp:</strong><br>(00) 00000-0000</p>
+    </div>
+  </div>
+
+  <!-- Barra Inferior de Direitos Autorais -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-content">
+      <p>&copy; 2026 DOCES.BR — Todos os direitos reservados.</p>
+      <p class="pagamentos-aceitos">Pix • Cartões de Crédito/Débito • Dinheiro</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
