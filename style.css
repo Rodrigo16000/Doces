@@ -1,12 +1,12 @@
 :root {
-  --color-chocolate: #5d4037;
-  --color-chocolate-dark: #3e2723;
-  --color-caramel: #a85d1a;
-  --color-caramel-light: #f3d6a6;
-  --color-cream: #fff8f0;
-  --color-border: #e8d7c4;
-  --color-footer: #2b1b17;
-  --color-footer-muted: #d6c4b8;
+  --color-chocolate: #292b36;
+  --color-chocolate-dark: #1b1d27;
+  --color-caramel: #f05a28;
+  --color-caramel-light: #ffb38a;
+  --color-cream: #f3f5f6;
+  --color-border: #d9dfe3;
+  --color-footer: #191a23;
+  --color-footer-muted: #d2d5dc;
   --color-white: #ffffff;
 }
 
@@ -76,13 +76,31 @@ body {
   display: none;
 }
 
-/* Configurações básicas do Banner */
+/* Banner principal */
 .hero-banner {
-  background-color: var(--color-chocolate-dark);
   position: relative;
-  padding: 60px 20px 100px 20px;
+  width: 100%;
+  aspect-ratio: 1024 / 434;
   overflow: hidden;
-  font-family: 'Arial', sans-serif;
+  background-image: url("./img/banner-campanha-horizontal.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.wave-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 48px;
+  line-height: 0;
+}
+
+.wave-bottom svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .banner-container {
@@ -99,6 +117,7 @@ body {
 .banner-content {
   flex: 1;
   min-width: 300px;
+  max-width: 620px;
 }
 
 .title {
@@ -134,33 +153,6 @@ body {
   background-color: transparent;
   border: 2px solid var(--color-cream);
   color: var(--color-cream);
-}
-
-/* Coluna de Imagem (Direita) */
-.banner-image {
-  flex: 1;
-  min-width: 300px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Forma/Estrela decorativa no fundo da imagem */
-.shape-bg {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  background-color: var(--color-caramel-light);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  z-index: 1;
-}
-
-.main-img {
-  position: relative;
-  z-index: 2;
-  max-width: 100%;
-  height: auto;
 }
 
 /* Onda na parte inferior */
@@ -215,7 +207,7 @@ body {
   border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(93, 64, 55, 0.08);
+  box-shadow: 0 10px 25px rgba(27, 29, 39, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -223,7 +215,7 @@ body {
 
 .card-produto:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(93, 64, 55, 0.18);
+  box-shadow: 0 15px 35px rgba(27, 29, 39, 0.18);
 }
 
 /* Área da Imagem */
@@ -276,6 +268,106 @@ body {
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
+
+.photo-gallery {
+  display: grid;
+  gap: 24px;
+}
+
+.gallery-title {
+  margin-top: 18px;
+  color: var(--color-chocolate-dark);
+  font-size: 1.45rem;
+  text-align: center;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.photo-grid--kits {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.photo-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-cream);
+  box-shadow: 0 8px 20px rgba(27, 29, 39, 0.08);
+}
+
+.photo-card--wide {
+  grid-column: span 2;
+}
+
+.photo-frame {
+  display: flex;
+  height: 280px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-caramel-light);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-card--wide .photo-frame img {
+  object-position: center 55%;
+}
+
+.photo-card figcaption {
+  padding: 14px 16px;
+  color: var(--color-chocolate-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.videos-section {
+  padding: 80px 20px;
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.video-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 8px 20px rgba(27, 29, 39, 0.08);
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-chocolate-dark);
+  object-fit: contain;
+}
+
+.video-card h3 {
+  padding: 18px 20px;
+  color: var(--color-chocolate-dark);
+  font-size: 1.15rem;
+  text-align: center;
+}
+
 .pagamento-section {
   padding: 80px 20px;
   background-color: var(--color-cream);
@@ -302,13 +394,13 @@ body {
 
 .card-pagamento:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(93, 64, 55, 0.12);
+  box-shadow: 0 12px 28px rgba(27, 29, 39, 0.12);
 }
 
 /* Ícone */
 .icon-box {
   width: 60px;
-  height: 60px;
+  height: 48px;
   background-color: var(--color-caramel-light);
   color: var(--color-chocolate);
   border-radius: 50%;
@@ -407,6 +499,145 @@ body {
   background-color: var(--color-chocolate);
   transform: translateY(-2px);
 }
+
+.reviews-note {
+  margin: 18px auto 0;
+  color: var(--color-chocolate);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.review-form {
+  display: grid;
+  gap: 20px;
+  max-width: 600px;
+  margin: 28px auto 0;
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-cream);
+  box-shadow: 0 8px 20px rgba(27, 29, 39, 0.08);
+}
+
+.review-form[hidden] {
+  display: none;
+}
+
+.review-form h3 {
+  color: var(--color-chocolate-dark);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.rating-field {
+  border: 0;
+}
+
+.rating-field legend {
+  margin-bottom: 8px;
+  color: var(--color-chocolate);
+  font-weight: 700;
+}
+
+.rating-options {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.rating-options input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.rating-options label {
+  color: #c4c8ce;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.rating-options label.is-active,
+.rating-options label:hover,
+.rating-options label:hover ~ input + label {
+  color: var(--color-caramel);
+}
+
+.rating-options input:focus-visible + label {
+  outline: 2px solid var(--color-chocolate-dark);
+  outline-offset: 3px;
+}
+
+.review-status {
+  min-height: 1.4em;
+  color: var(--color-chocolate);
+}
+
+.reviews-list {
+  display: grid;
+  gap: 16px;
+  max-width: 800px;
+  margin: 32px auto 0;
+}
+
+.review-empty {
+  margin-top: 24px;
+  color: var(--color-chocolate);
+  text-align: center;
+}
+
+.review-empty[hidden] {
+  display: none;
+}
+
+.review-entry {
+  padding: 20px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-cream);
+}
+
+.review-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.review-entry h4 {
+  color: var(--color-chocolate-dark);
+  font-size: 1.05rem;
+}
+
+.review-entry time {
+  color: var(--color-chocolate);
+  font-size: 0.85rem;
+}
+
+.review-entry-rating {
+  margin-bottom: 8px;
+  color: var(--color-caramel);
+  letter-spacing: 2px;
+}
+
+.review-entry p {
+  color: var(--color-chocolate);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.review-error {
+  color: #a32121;
+  text-align: center;
+}
+
 /* Seção Fale Conosco */
 .fale-conosco-section {
   padding: 80px 20px;
@@ -674,6 +905,10 @@ body {
 }
 
 @media (max-width: 760px) {
+  .wave-bottom {
+    height: 40px;
+  }
+
   .navbar-container {
     position: relative;
     padding: 14px 20px;
@@ -723,40 +958,8 @@ body {
     font-size: 1rem;
   }
 
-  .hero-banner {
-    padding: 48px 20px 80px;
-  }
-
-  .banner-container {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .banner-content,
-  .banner-image {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .title {
-    font-size: clamp(2rem, 8vw, 2.6rem);
-  }
-
-  .subtitle {
-    font-size: 1.05rem;
-  }
-
-  .shape-bg {
-    width: min(72vw, 280px);
-    height: min(72vw, 280px);
-  }
-
-  .main-img {
-    max-height: 280px;
-    object-fit: contain;
-  }
-
   .sacola-section,
+  .videos-section,
   .pagamento-section,
   .avaliacoes-section,
   .fale-conosco-section {
@@ -775,9 +978,52 @@ body {
 
   .cards-grid,
   .pagamento-grid,
-  .fale-conosco-grid {
+  .fale-conosco-grid,
+  .videos-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .photo-card--wide {
+    grid-column: span 2;
+  }
+
+  .photo-grid--kits {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .photo-grid--kits .photo-card--wide {
+    grid-column: span 6;
+  }
+
+  .photo-grid--kits .photo-card:not(.photo-card--wide) {
+    grid-column: span 2;
+  }
+
+  .photo-frame {
+    height: 230px;
+  }
+
+  .photo-card--wide .photo-frame {
+    height: 250px;
+  }
+
+  .photo-grid--kits .photo-card--wide .photo-frame {
+    height: 175px;
+  }
+
+  .photo-card figcaption {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+
+  .review-form {
+    padding: 24px 20px;
   }
 
   .card-produto:hover,

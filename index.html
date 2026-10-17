@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doces</title>
+    <title>Sacola Supresa</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,7 +12,7 @@
   <nav class="navbar-container">
     <!-- Logótipo / Nome da Marca -->
     <a href="#" class="logo">
-      DOCES<span>.BR</span>
+      Sacola <span>Supresa</span>
     </a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
@@ -23,34 +23,17 @@
 
     <!-- Menu de Links -->
     <ul class="nav-links" id="nav-links">
-      <li><a href="#quem-somos">Quem Somos?</a></li>
       <li><a href="#produtos">O Que Pode Vir?</a></li>
+      <li><a href="#videos">Vídeos</a></li>
       <li><a href="#compra">Compra e Formas de Pagamento</a></li>
       <li><a href="#avaliacoes">Avaliações</a></li>
       <li><a href="#fale-conosco">Fale Conosco</a></li>
     </ul>
   </nav>
 </header>
-        <section class="hero-banner">
-  <div class="banner-container">
-    <!-- Coluna de Texto (Esquerda) -->
-    <div class="banner-content">
-      <h1 class="title">DOCES ARTESANAIS COM SABOR INCOMPARÁVEL</h1>
-      <p class="subtitle">
-        Aproveite nossas ofertas exclusivas! Junte-se a milhares de clientes e adoce o seu dia.
-      </p>
-    </div>
-
-    <!-- Coluna da Imagem (Direita) -->
-    <div class="banner-image">
-      <div class="shape-bg"></div>
-      <img src="sua-imagem-de-doce.png" alt="Doce Especial" class="main-img" />
-    </div>
-  </div>
-
-  <!-- Onda Decorativa na parte inferior -->
-  <div class="wave-bottom">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<section class="hero-banner">
+  <div class="wave-bottom" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 60C320 120 420 0 720 60C1020 120 1120 0 1440 60V120H0V60Z" fill="#ffffff"/>
     </svg>
   </div>
@@ -60,42 +43,85 @@
     <h2 class="section-title">O que vem na sua Sacola?</h2>
     <p class="section-subtitle">Montamos cada sacola com um mix delicioso de guloseimas selecionadas com carinho!</p>
 
-    <div class="cards-grid">
-      <!-- Card 1: Bombons -->
-      <div class="card-produto">
-        <div class="card-image">
-          <img src="bombons.jpg" alt="Bombons Finos e Recheados" />
-        </div>
-        <div class="card-content">
-          <h3>Bombons Variados</h3>
-          <p>Bombons recheados, trufados e das melhores marcas para deixar sua sacola ainda mais especial.</p>
-          <span class="badge">Sortidos</span>
-        </div>
+    <div class="photo-gallery">
+      <h3 class="gallery-title">Sacolas e kits preparados com carinho</h3>
+      <div class="photo-grid photo-grid--kits">
+        <figure class="photo-card photo-card--wide">
+          <div class="photo-frame">
+            <img src="./img/produtos/varias-sacolas.jpeg" alt="Várias Sacolas Surpresa prontas para presentear" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Presentes prontos para surpreender</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/sacola-personalizada.jpeg" alt="Sacolas Surpresa personalizadas com alças de papel" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Sacolas personalizadas</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/kit-pronto.jpeg" alt="Kit de doces montado junto à Sacola Surpresa" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Kits montados com doces variados</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/montagem-kits.jpeg" alt="Doces e itens organizados para montar kits" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Detalhes de cada kit</figcaption>
+        </figure>
       </div>
 
-      <!-- Card 2: Balas e Chicletes -->
-      <div class="card-produto">
-        <div class="card-image">
-          <img src="balas.jpg" alt="Balas e Doces Variados" />
-        </div>
-        <div class="card-content">
-          <h3>Balas & Doces</h3>
-          <p>Balas mastigáveis, pirulitos, gomas de mascar e guloseimas clássicas que todo mundo ama.</p>
-          <span class="badge">Coloridos</span>
-        </div>
+      <h3 class="gallery-title">Doces que podem deixar sua sacola ainda mais especial</h3>
+      <div class="photo-grid photo-grid--sweets">
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/baloes.jpeg" alt="Balões metalizados dourados para comemoração" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Balões metalizados</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/bala-de-iogurte.jpeg" alt="Balas mastigáveis sabor iogurte" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Balas de iogurte</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/gomas-coloridas.jpeg" alt="Pacote de gomas coloridas" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Gomas coloridas</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="photo-frame">
+            <img src="./img/produtos/jelly-beans.jpeg" alt="Jelly beans de frutas sortidas" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Jelly beans sortidas</figcaption>
+        </figure>
       </div>
+    </div>
+  </div>
+</section>
+<section class="videos-section" id="videos">
+  <div class="container">
+    <h2 class="section-title">Veja de pertinho</h2>
+    <p class="section-subtitle">Um pouquinho mais das nossas Sacolas Surpresa e dos detalhes que preparamos com carinho.</p>
 
-      <!-- Card 3: Personalização -->
-      <div class="card-produto">
-        <div class="card-image">
-          <img src="sacola-art.jpg" alt="Sacola Personalizada" />
-        </div>
-        <div class="card-content">
-          <h3>Sacola Exclusiva</h3>
-          <p>Embalagem personalizada com laço e mensagem especial, perfeita para presentes ou lembrancinhas.</p>
-          <span class="badge">Especial</span>
-        </div>
-      </div>
+    <div class="videos-grid">
+      <article class="video-card">
+        <video controls preload="metadata" playsinline>
+          <source src="./videos/sacolasupresa.mp4" type="video/mp4">
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <h3>Nossas Sacolas Surpresa</h3>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline>
+          <source src="./videos/videodaora.mp4" type="video/mp4">
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <h3>Mais detalhes para você</h3>
+      </article>
     </div>
   </div>
 </section>
@@ -156,13 +182,43 @@
     <h2 class="section-title">Avaliações</h2>
     <p class="section-subtitle">A opinião dos nossos clientes é o que garante a nossa qualidade!</p>
 
-    <!-- Caixa de Convite para Primeiras Avaliações -->
     <div class="card-sem-avaliacao">
       <div class="icon-avaliacao">⭐</div>
-      <h3>Seja o primeiro a avaliar!</h3>
-      <p>Já experimentou as nossas sacolas de doces? Faça o seu pedido, conte-nos como foi a sua experiência e ajude a nossa comunidade a crescer.</p>
-      <a href="#fale-conosco" class="btn-avaliar">Fazer um Pedido</a>
+      <h3>Conte como foi sua experiência!</h3>
+      <p>Já experimentou nossas sacolas de doces? Sua opinião pode ajudar outras pessoas.</p>
+      <button type="button" class="btn-avaliar" id="toggle-review-form" aria-controls="review-form" aria-expanded="false">Avaliar produto</button>
     </div>
+    <p class="reviews-note">As avaliações ficam salvas neste navegador e não são publicadas para outros visitantes.</p>
+    <form class="review-form" id="review-form" hidden>
+      <h3>Sua avaliação</h3>
+      <div class="form-group">
+        <label for="review-name">Seu nome</label>
+        <input type="text" id="review-name" name="name" maxlength="60" autocomplete="name" required>
+      </div>
+      <fieldset class="rating-field">
+        <legend>Sua nota</legend>
+        <div class="rating-options">
+          <input type="radio" id="rating-1" name="rating" value="1" required>
+          <label for="rating-1" aria-label="1 estrela">★</label>
+          <input type="radio" id="rating-2" name="rating" value="2">
+          <label for="rating-2" aria-label="2 estrelas">★</label>
+          <input type="radio" id="rating-3" name="rating" value="3">
+          <label for="rating-3" aria-label="3 estrelas">★</label>
+          <input type="radio" id="rating-4" name="rating" value="4">
+          <label for="rating-4" aria-label="4 estrelas">★</label>
+          <input type="radio" id="rating-5" name="rating" value="5">
+          <label for="rating-5" aria-label="5 estrelas">★</label>
+        </div>
+      </fieldset>
+      <div class="form-group">
+        <label for="review-comment">Seu comentário</label>
+        <textarea id="review-comment" name="comment" rows="4" maxlength="500" required></textarea>
+      </div>
+      <p class="review-status" id="review-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn-avaliar">Enviar avaliação</button>
+    </form>
+    <p class="review-empty" id="reviews-empty">Ainda não há avaliações. Seja a primeira pessoa a avaliar!</p>
+    <div class="reviews-list" id="reviews-list" aria-live="polite"></div>
   </div>
 </section>
 <section class="fale-conosco-section" id="fale-conosco">
@@ -176,7 +232,7 @@
         <h3>Atendimento Rápido</h3>
         <p>Clique abaixo para falar diretamente conosco ou envie uma mensagem:</p>
 
-        <a href="https://wa.me/5500000000000" target="_blank" class="btn-whatsapp">
+        <a href="https://wa.me/5527997511735" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
@@ -188,10 +244,6 @@
           <span>Segunda a Sábado, das 09h às 18h</span>
         </div>
 
-        <div class="info-item">
-          <strong>E-mail:</strong>
-          <span>contato@doces.com.br</span>
-        </div>
       </div>
 
       <!-- Formulário de Mensagem -->
@@ -202,7 +254,7 @@
         </div>
 
         <div class="form-group">
-          <label for="whatsapp">Seu WhatsApp ou E-mail</label>
+          <label for="whatsapp">Seu WhatsApp</label>
           <input type="text" id="whatsapp" placeholder="(00) 00000-0000" required>
         </div>
 
@@ -230,7 +282,7 @@
         Sua loja especializada em sacolas personalizadas recheadas de bombons, balas e guloseimas artesanais para adoçar todos os momentos.
       </p>
       <div class="social-links">
-        <a href="#" target="_blank" aria-label="Instagram">Instagram</a>
+        <a href="https://www.instagram.com/sacolassupresaoficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @sacolassupresaoficial">@sacolassupresaoficial</a>
         <a href="#" target="_blank" aria-label="Facebook">Facebook</a>
       </div>
     </div>
@@ -239,9 +291,8 @@
     <div class="footer-col">
       <h4>Navegação</h4>
       <ul class="footer-links">
-        <li><a href="#quem-somos">Quem Somos</a></li>
         <li><a href="#produtos">O Que Pode Vir</a></li>
-        <li><a href="#pagamento">Compras e Pagamento</a></li>
+        <li><a href="#compra">Compras e Pagamento</a></li>
         <li><a href="#avaliacoes">Avaliações</a></li>
         <li><a href="#fale-conosco">Fale Conosco</a></li>
       </ul>
@@ -251,7 +302,7 @@
     <div class="footer-col">
       <h4>Atendimento</h4>
       <p><strong>Horário:</strong><br>Segunda a Sábado: 09h às 18h</p>
-      <p><strong>Atendimento via WhatsApp:</strong><br>(00) 00000-0000</p>
+      <p><strong>Atendimento via WhatsApp:</strong><br><a href="https://wa.me/5527997511735" target="_blank" rel="noopener noreferrer">(27) 99751-1735</a></p>
     </div>
   </div>
 
