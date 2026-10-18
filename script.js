@@ -1,3 +1,12 @@
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  orderBy,
+  query,
+} from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+import { db } from "./firebase.js";
+
 const contactForm = document.querySelector(".form-contato");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -66,7 +75,6 @@ const reviewToggle = document.querySelector("#toggle-review-form");
 const reviewStatus = document.querySelector("#review-status");
 const reviewsList = document.querySelector("#reviews-list");
 const reviewsEmptyMessage = document.querySelector("#reviews-empty");
-const reviewsStorageKey = "doces-product-reviews";
 
 if (
   reviewForm instanceof HTMLFormElement &&
@@ -137,26 +145,36 @@ if (
     });
   }
 
-  let reviews = [];
-  let storageAvailable = true;
+  const reviewsQuery = query(
+    collection(db, "feedbacks"),
+    orderBy("data", "desc"),
+  );
 
-  try {
-    const savedReviews = localStorage.getItem(reviewsStorageKey);
-    if (savedReviews) {
-      const parsedReviews = JSON.parse(savedReviews);
-      if (!Array.isArray(parsedReviews) || !parsedReviews.every(isStoredReview)) {
-        throw new Error("Os dados salvos não estão no formato esperado.");
-      }
-      reviews = parsedReviews;
-    }
-  } catch (error) {
-    storageAvailable = false;
-    reviewStatus.textContent =
-      "Não foi possível carregar as avaliações salvas neste navegador.";
-    console.error("Falha ao carregar avaliações locais:", error);
-  }
+  onSnapshot(
+    reviewsQuery,
+    (snapshot) => {
+      const reviews = snapshot.docs
+        .map((reviewDocument) => {
+          const data = reviewDocument.data();
+          const createdAt = data.data?.toDate?.();
 
-  renderReviews(reviews);
+          return {
+            name: data.nome,
+            rating: data.pontuacao,
+            comment: data.mensagem,
+            createdAt: createdAt?.toISOString(),
+          };
+        })
+        .filter(isStoredReview);
+
+      renderReviews(reviews);
+    },
+    (error) => {
+      reviewStatus.textContent =
+        "Não foi possível carregar as avaliações. Tente novamente mais tarde.";
+      console.error("Falha ao carregar avaliações do Firestore:", error);
+    },
+  );
 
   reviewToggle.addEventListener("click", () => {
     const isOpening = reviewForm.hidden;
@@ -170,14 +188,8 @@ if (
     }
   });
 
-  reviewForm.addEventListener("submit", (event) => {
+  reviewForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    if (!storageAvailable) {
-      reviewStatus.textContent =
-        "Não é possível salvar uma avaliação até que o armazenamento deste navegador esteja disponível.";
-      return;
-    }
 
     const formData = new FormData(reviewForm);
     const name = String(formData.get("name") || "").trim();
@@ -189,27 +201,29 @@ if (
       return;
     }
 
-    const newReview = {
-      name,
-      rating,
-      comment,
-      createdAt: new Date().toISOString(),
-    };
-    const updatedReviews = [newReview, ...reviews];
-
+    const submitButton = reviewForm.querySelector('button[type="submit"]');
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+    }
+    reviewStatus.textContent = "Enviando sua avaliação...";
     try {
-      localStorage.setItem(reviewsStorageKey, JSON.stringify(updatedReviews));
+      await addDoc(collection(db, "feedbacks"), {
+        nome: name,
+        mensagem: comment,
+        pontuacao: rating,
+        data: new Date(),
+      });
+      reviewForm.reset();
+      updateRatingStars(0);
+      reviewStatus.textContent = "Obrigado pelo seu feedback!";
     } catch (error) {
       reviewStatus.textContent =
-        "Não foi possível salvar sua avaliação. Verifique o armazenamento do navegador e tente novamente.";
-      console.error("Falha ao salvar avaliação local:", error);
-      return;
+        "Não foi possível enviar sua avaliação. Tente novamente mais tarde.";
+      console.error("Falha ao enviar avaliação para o Firestore:", error);
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = false;
+      }
     }
-
-    reviews = updatedReviews;
-    renderReviews(reviews);
-    reviewForm.reset();
-    updateRatingStars(0);
-    reviewStatus.textContent = "Sua avaliação foi salva neste navegador.";
   });
 }

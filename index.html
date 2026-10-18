@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sacola Supresa</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 <body>
     <header class="navbar-header">
@@ -188,7 +188,7 @@
       <p>Já experimentou nossas sacolas de doces? Sua opinião pode ajudar outras pessoas.</p>
       <button type="button" class="btn-avaliar" id="toggle-review-form" aria-controls="review-form" aria-expanded="false">Avaliar produto</button>
     </div>
-    <p class="reviews-note">As avaliações ficam salvas neste navegador e não são publicadas para outros visitantes.</p>
+    <p class="reviews-note">As avaliações ficam salvas no Firestore e podem ser vistas por todos os visitantes.</p>
     <form class="review-form" id="review-form" hidden>
       <h3>Sua avaliação</h3>
       <div class="form-group">
